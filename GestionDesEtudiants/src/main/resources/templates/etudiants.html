@@ -1,32 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8"/>
     <title>Liste des Etudiants </title>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>CNE</th>
-        <th>EMAIL</th>
-        <th>DATE</th>
-        <th>PHOTO</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="e:${etudiants}">
-        <td th:text="${e.id}"></td>
-        <td th:text="${e.name}"></td>
-        <td th:text="${e.cne}"></td>
-        <td th:text="${e.email}"></td>
-        <td th:text="${e.dateNaissance}"></td>
-        <td th:text="${e.photo}"></td>
-
-    </tr>
-    </tbody>
+<h1>Test </h1>
 </table>
 </body>
 </html>

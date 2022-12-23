@@ -26,7 +26,7 @@ public class GestionDesEtudiantsApplication {
 		etudiantRepository.save(new Etudiant("aziz","vb57606","aziz@gmail.com",df.parse("21/01/2000"),"aziz.jpg"));
 		etudiantRepository.save(new Etudiant("asmae","vpp57606","asmae@gmail.com",df.parse("01/03/1999"),"asmae.jpg"));
 
-	Page<Etudiant> etd = etudiantRepository.searchEtudiantsCNE("vb57606",PageRequest.of(0, 4));
+	Page<Etudiant> etd = etudiantRepository.searchEtudiantsCNE("vpp57606",PageRequest.of(0, 4));
 	etd.forEach(e -> System.out.println(e.getName()));
 	}
 

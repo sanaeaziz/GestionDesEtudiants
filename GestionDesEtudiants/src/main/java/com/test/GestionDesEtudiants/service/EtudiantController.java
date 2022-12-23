@@ -13,11 +13,17 @@ import java.util.List;
 public class EtudiantController {
     private EtudiantRepository etudiantRepository;
 
+        @RequestMapping(value = "/error")
+        public String error() {
+            return "Error handling";
+        }
 
-    @RequestMapping(value="/Index")
+
+    @RequestMapping(value="/index")
     public String Index( Model model){
         List<Etudiant> etds = etudiantRepository.findAll();
         model.addAttribute("etudiants", etds);
         return "etudiants";
     }
+
 }
