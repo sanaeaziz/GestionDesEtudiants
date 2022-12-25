@@ -20,7 +20,7 @@ public class EtudiantController {
 
     @RequestMapping(value="/Index")
     public String Index(Model model, @RequestParam(name = "page",defaultValue = "0")int p){
-        Page<Etudiant> pageEtudiants = etudiantRepository.findAll(PageRequest.of(  p,1));
+        Page<Etudiant> pageEtudiants = etudiantRepository.findAll(PageRequest.of(  p,2));
         model.addAttribute("pageEtudiants", pageEtudiants);
         int pagescount =pageEtudiants.getTotalPages();
         int [] pages=new int[pagescount];

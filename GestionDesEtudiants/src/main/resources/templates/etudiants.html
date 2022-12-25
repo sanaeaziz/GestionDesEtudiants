@@ -35,7 +35,7 @@
 </table>
 </div>
 <div class="container">
-    <ul class="nav nav-pills">
+    <ul class="d-flex justify-content-between">
         <li th:each="p:${pages}" >
 
             <a th:text="${p}" th:href="@{Index(page=${p})}"></a>
