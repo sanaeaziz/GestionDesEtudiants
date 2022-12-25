@@ -22,7 +22,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="e:${etudiants}">
+    <tr th:each="e:${pageEtudiants.content}">
         <td th:text="${e.id}"></td>
         <td th:text="${e.name}"></td>
         <td th:text="${e.cne}"></td>
@@ -33,6 +33,14 @@
     </tr>
     </tbody>
 </table>
+</div>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li th:each="p:${pages}" >
+
+            <a th:text="${p}" th:href="@{Index(page=${p})}"></a>
+        </li>
+    </ul>
 </div>
 </body>
 </html>
