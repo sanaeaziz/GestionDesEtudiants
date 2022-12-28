@@ -7,6 +7,7 @@
           th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" href="../static/css/myStyle.css"
           th:href="@{/css/myStyle.css}">
+    <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
 <div class="container spacer">
@@ -34,13 +35,17 @@
     </tbody>
 </table>
 </div>
-<div class="container">
-    <ul class="d-flex justify-content-between">
-        <li th:each="p:${pages}" >
+<nav class="nav nav-pills flex-column flex-sm-row">
+    <div class="nav nav-pills">
+    <ul class="navbar-header"style="display:flex">
+        <li th:each="p:${pages}" class="active" >
 
-            <a th:text="${p}" th:href="@{Index(page=${p})}"></a>
+            <a  class="nav-link active" th:text="${p}" th:href="@{Index(page=${p})}"></a>
         </li>
     </ul>
+     </div>
+</nav>
+
 </div>
 </body>
 </html>

@@ -2,3 +2,8 @@
  margin-top:80px;
 
  }
+ul.navbar-header li{
+  list-style-type: none;
+  margin: 10px 50px 20px 0;
+
+}
