@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -33,6 +34,11 @@ public class EtudiantController {
         model.addAttribute("motCle",mc);
 
         return "etudiants";
+    }
+
+    @RequestMapping(value = "/Form",method = RequestMethod.GET)
+    public String FormEtudiants(){
+        return "formEtudiants";
     }
 
 }
