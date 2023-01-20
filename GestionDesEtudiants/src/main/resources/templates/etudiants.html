@@ -11,11 +11,20 @@
 </head>
 <body>
 <div class="container spacer">
+    <form th:action="@{Index}" method="get">
+    <div class="form-group">
+        <label> Mot Cle:</label>
+        <input type="text" name="motCle"/>
+        <button type="submit">Search</button>
+    </div>
+    </form>
+</div>
+<div class="container spacer">
 <table class="table ">
     <thead>
     <tr>
         <th>ID</th>
-        <th>Nam</th>
+        <th>Name</th>
         <th>CNE</th>
         <th>Date</th>
         <th>Email</th>
@@ -35,17 +44,18 @@
     </tbody>
 </table>
 </div>
-<nav class="nav nav-pills flex-column flex-sm-row">
+<div class="container">
+
     <div class="nav nav-pills">
     <ul class="navbar-header"style="display:flex">
-        <li th:each="p:${pages}" class="active" >
+        <li th:each="p:${pages}" th:class="${p==pageCourante}?active:'' " >
 
             <a  class="nav-link active" th:text="${p}" th:href="@{Index(page=${p})}"></a>
         </li>
     </ul>
      </div>
-</nav>
 
+</div>
 </div>
 </body>
 </html>

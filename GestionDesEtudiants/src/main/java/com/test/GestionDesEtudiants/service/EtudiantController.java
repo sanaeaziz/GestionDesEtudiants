@@ -19,13 +19,19 @@ public class EtudiantController {
     private EtudiantRepository etudiantRepository;
 
     @RequestMapping(value="/Index")
-    public String Index(Model model, @RequestParam(name = "page",defaultValue = "0")int p){
-        Page<Etudiant> pageEtudiants = etudiantRepository.findAll(PageRequest.of(  p,2));
-        model.addAttribute("pageEtudiants", pageEtudiants);
-        int pagescount =pageEtudiants.getTotalPages();
-        int [] pages=new int[pagescount];
-        for (int i=0;i<pagescount;i++) pages[i]=i;
+    public String Index(Model model,
+                        @RequestParam(name = "page",defaultValue = "0")int p,
+                        @RequestParam(name = "motCle ",defaultValue ="")String mc){
+        Page<Etudiant> pageEtudiants = etudiantRepository.searchEtudiants( "%"+mc+"%",PageRequest.of(p,3));
+
+        int pagesCount =pageEtudiants.getTotalPages();
+        int [] pages=new int[pagesCount];
+        for (int i=0;i<pagesCount;i++) pages[i]=i;
         model.addAttribute("pages",pages);
+        model.addAttribute("pageEtudiants",pageEtudiants);
+        model.addAttribute("pageCount",p);
+        model.addAttribute("motCle",mc);
+
         return "etudiants";
     }
 

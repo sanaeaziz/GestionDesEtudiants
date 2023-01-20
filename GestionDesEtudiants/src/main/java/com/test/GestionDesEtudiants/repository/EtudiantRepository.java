@@ -15,6 +15,6 @@ public interface EtudiantRepository extends JpaRepository< Etudiant, Long> {
     public Page<Etudiant> findByName(String name, Pageable pageable);
     @Query("select e from Etudiant e where e.dateNaissance >:x and e.dateNaissance <:y")
     public List<Etudiant> searchEtudiants(@Param("x")Date d1,@Param("y")Date d2);
-  @Query("select e from Etudiant e where e.cne like :x")
-    public Page<Etudiant> searchEtudiantsCNE(@Param("x")String cne, Pageable pageable);
+  @Query("select e from Etudiant e where e.name like :x")
+    public Page<Etudiant> searchEtudiants(@Param("x")String mc, Pageable pageable);
 }
