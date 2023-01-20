@@ -20,7 +20,7 @@ public class  GestionDesEtudiantsApplication {
 	public static void main(String[] args) throws ParseException {
 
 		ApplicationContext ctx =SpringApplication.run(GestionDesEtudiantsApplication.class, args);
-		/**
+/**
 		EtudiantRepository etudiantRepository = ctx.getBean(EtudiantRepository.class);
 
 		DateFormat df =new SimpleDateFormat("dd/mm/yyyy");
@@ -30,9 +30,10 @@ public class  GestionDesEtudiantsApplication {
 
 		etudiantRepository.save(new Etudiant("asmae","vpp57606","asmae@gmail.com",df.parse("01/03/1999"),"asmae.jpg"));
 
-	Page<Etudiant> etd = etudiantRepository.searchEtudiantsCNE("b15265",PageRequest.of(0, 4));
+	Page<Etudiant> etd = etudiantRepository.searchEtudiants("hayat",PageRequest.of(0, 4));
 	etd.forEach(e -> System.out.println(e.getName()));
-		 **/
+ **/
+
 	}
 
 }

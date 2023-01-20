@@ -21,7 +21,7 @@ public class EtudiantController {
     @RequestMapping(value="/Index")
     public String Index(Model model,
                         @RequestParam(name = "page",defaultValue = "0")int p,
-                        @RequestParam(name = "motCle ",defaultValue ="")String mc){
+                        @RequestParam(name = "motCle",defaultValue ="")String mc){
         Page<Etudiant> pageEtudiants = etudiantRepository.searchEtudiants( "%"+mc+"%",PageRequest.of(p,3));
 
         int pagesCount =pageEtudiants.getTotalPages();
