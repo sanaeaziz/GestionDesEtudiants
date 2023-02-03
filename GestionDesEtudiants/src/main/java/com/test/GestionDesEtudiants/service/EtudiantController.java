@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -37,7 +38,9 @@ public class EtudiantController {
     }
 
     @RequestMapping(value = "/Form",method = RequestMethod.GET)
-    public String FormEtudiants(){
+    public String FormEtudiants( Model model){
+        model.addAttribute("etudiant",new Etudiant("xx","Xxxx","xx@exemple.com",new Date(),"xx.jpg"));//data binding
+
         return "formEtudiants";
     }
 

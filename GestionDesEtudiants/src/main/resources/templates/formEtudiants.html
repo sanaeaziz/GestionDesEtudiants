@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8"/>
-  <title>saisie des Etudiants </title>
+  <title>Saisie des Etudiants </title>
   <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
         th:href="@{/css/bootstrap.min.css}">
   <link rel="stylesheet" type="text/css" href="../static/css/myStyle.css"
@@ -10,11 +10,53 @@
   <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
-<div class="panel panel-default">
-  <div class="panel-heading"> saisie d'une etudiant</div>
-  <div class="panel-body">
-    Formulaire her!!!!
+<div class="container">
+
+  <div class=" col-xl-auto  col-md-6 spacer d-flex justify-content-xl-center">
+    <fieldset class="scheduler-border">
+      <div class="panel panel-default ">
+
+      <div class="panel-heading"> saisie d'une etudiant</div>
+      <div class="panel-body">
+        <form th:action="@{SaveEtudiant}"  th:object="${etudiant}"method="post" >
+          <div class="form-group">
+            <label class="control-label">Name</label>
+            <input type="text" th:field="*{name}" class="form-control"/>
+            <span></span>
+          </div>
+          <div class="form-group">
+            <label class="control-label">cne</label>
+            <input type="text" th:field="*{cne}" class="form-control"/>
+            <span></span>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Email</label>
+            <input type="email" th:field="*{email}" class="form-control" />
+            <span></span>
+          </div>
+          <div class="form-group">
+            <label class="control-label">DateNaissance</label>
+            <input type="date" th:field="*{dateNaissance}" class="form-control"/>
+            <span></span>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label">Photo</label>
+            <input type="file" th:field="*{photo}" class="form-control">
+            <span></span>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+
+        </form>
+
+       </div>
+     </div>
+    </fieldset>
   </div>
+
 </div>
 </body>
 </html>
