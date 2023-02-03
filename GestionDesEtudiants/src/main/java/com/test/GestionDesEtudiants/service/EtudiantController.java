@@ -43,5 +43,11 @@ public class EtudiantController {
 
         return "formEtudiants";
     }
+    @RequestMapping(value = "/SaveEtudiant",method = RequestMethod.POST)
+    public String Save( Etudiant et){
+
+            etudiantRepository.save(et);
+        return "redirect:Index";
+    }
 
 }
