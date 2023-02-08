@@ -22,29 +22,29 @@
           <div class="form-group">
             <label class="control-label">Name</label>
             <input type="text" th:field="*{name}" class="form-control"/>
-            <span></span>
+            <span th:erros="*{name}"></span>
           </div>
           <div class="form-group">
             <label class="control-label">cne</label>
             <input type="text" th:field="*{cne}" class="form-control"/>
-            <span></span>
+            <span th:erros="*{cne}"></span>
           </div>
           <div class="form-group">
             <label class="control-label">Email</label>
             <input type="email" th:field="*{email}" class="form-control" />
-            <span></span>
+            <span th:erros="*{email}"></span>
           </div>
           <div class="form-group">
             <label class="control-label">DateNaissance</label>
             <input type="date" th:field="*{dateNaissance}" class="form-control"/>
-            <span></span>
+            <span th:erros="*{dateNaissance}"></span>
           </div>
 
 
           <div class="form-group">
             <label class="control-label">Photo</label>
             <input type="file" th:field="*{photo}" class="form-control">
-            <span></span>
+            <span th:erros="*{photo}"></span>
           </div>
           <div>
             <button type="submit" class="btn btn-primary">Save</button>

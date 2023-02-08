@@ -2,10 +2,8 @@ package com.test.GestionDesEtudiants.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 @Entity
@@ -14,9 +12,13 @@ public class Etudiant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private  String cne;
+    @NotEmpty
     private String email;
+    @NotEmpty
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date dateNaissance;
     private String photo;
